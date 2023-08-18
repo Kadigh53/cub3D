@@ -6,7 +6,7 @@
 /*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:54:28 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/18 21:45:58 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/18 21:55:33 by sbzizal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,10 +120,11 @@ int    ft_parsing(int ac, char *map, t_data *data)
     // print_array(data);
     get_path(data);
     if (check_path(data))
+        exit(1);
     allocate_map(data);
     check_map(data);
     print_map(data);
     parse_player(data);
     final_pars_map(data->map_path);
-    return (1);
+    return (0);
 }

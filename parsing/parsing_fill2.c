@@ -6,7 +6,7 @@
 /*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:12:20 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/18 21:43:30 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/18 22:05:36 by sbzizal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,23 +51,24 @@ char *ft_get_color(char *path)
     return(data_path);
 }
 
-char    *ft_get_path(char *path)
-{
-    char *new_path = NULL;
+// char    *ft_get_path(char *path)
+// {
+//     char *new_path = NULL;
     
-    int i = 0;
-    while(path[i])
-    {
-        if (path[i] == '.' && path[i + 1] == 'x' && path[i + 2] == 'p' && path[i + 3] == 'm')
-        {
-            new_path = strndup(path, i +4);
-            break;
-        }
-        i++;
-    }
-    // printf("new_path = %s\n", new_path);
-    return(new_path);
-}
+//     int i = 0;
+//     while(path[i])
+//     {
+//         if (path[i] == '.' && path[i + 1] == 'x' 
+//         && path[i + 2] == 'p' && path[i + 3] == 'm')
+//         {
+//             new_path = strndup(path, i +4);
+//             break;
+//         }
+//         i++;
+//     }
+//     // printf("new_path = %s\n", new_path);
+//     return(new_path);
+// }
 
 void    check_name(char *map)
 {

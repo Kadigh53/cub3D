@@ -6,7 +6,7 @@
 /*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:07:16 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/18 21:44:58 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/18 22:05:08 by sbzizal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,13 +118,13 @@ void    get_path(t_data *data)
     while(data->map_array[i])
     {
         if (strncmp(data->map_array[i], "NO", 2) == 0)
-            data->n_path = ft_get_path(ft_strdup(&data->map_array[i][3]));
+            data->n_path = ft_strtrim(ft_strdup(&data->map_array[i][3]), " ");
         if (strncmp(data->map_array[i], "SO", 2) == 0)
-            data->s_path = ft_get_path(ft_strdup(&data->map_array[i][3]));
+            data->s_path = ft_strtrim(ft_strdup(&data->map_array[i][3]), " ");
         if (strncmp(data->map_array[i], "WE", 2) == 0)
-            data->w_path = ft_get_path(ft_strdup(&data->map_array[i][3]));
+            data->w_path = ft_strtrim(ft_strdup(&data->map_array[i][3]), " ");
         if (strncmp(data->map_array[i], "EA", 2) == 0)
-            data->e_path = ft_get_path(ft_strdup(&data->map_array[i][3]));
+            data->e_path = ft_strtrim(ft_strdup(&data->map_array[i][3]), " ");
         if (strncmp(data->map_array[i], "F", 1) == 0)
             data->f_path = ft_get_color(ft_strdup(&data->map_array[i][2]));
         if (strncmp(data->map_array[i], "C", 1) == 0)
@@ -147,12 +147,6 @@ void    get_path(t_data *data)
         printf("config_not_valid\n");
         exit(1);
     }
-    data->n_path = ft_strtrim(data->n_path, " ");
-    data->s_path = ft_strtrim(data->s_path, " ");
-    data->w_path = ft_strtrim(data->w_path, " ");
-    data->e_path = ft_strtrim(data->e_path, " ");
-
-
 
 }
 
