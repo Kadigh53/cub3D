@@ -1,5 +1,0 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory `/Users/aaoutem-/Desktop/projects/cub3D'
-cc -Wall -Wextra  main.o -I /Users/aaoutem-/MLX42/build/libmlx42.a -lm -L/Users/aaoutem-/.brew/opt/glfw -ldl  -framework Cocoa -framework OpenGL -framework IOKit -o cub
-make: Leaving directory `/Users/aaoutem-/Desktop/projects/cub3D'
- 
