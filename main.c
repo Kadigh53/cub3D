@@ -13,6 +13,9 @@
 #include "cub3d.h"
 
 
+// dimension of projection plane width x height
+// angle between two subsequent rays (in radians) FOV/ width
+
 #include <string.h>
 int main()
 {
