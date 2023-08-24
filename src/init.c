@@ -39,8 +39,8 @@ void	player_position(t_data *data)
 				|| data->map[i][j] == 'S')
 			{
 				data->p_angle = player_angle(data, i, j);
-				data->pposx = (j + 0.5) * 64;
-				data->pposy = (i + 0.5) * 64;	
+				data->pposx = (j + 0.5) * 64.0;
+				data->pposy = (i + 0.5) * 64.0;
 			}
 		}
 	}

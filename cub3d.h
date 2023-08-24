@@ -21,7 +21,7 @@
 # include <stdlib.h>    
 # include <stdio.h>
 # include <fcntl.h>
-# include "/Users/aaoutem-/MLX42/include/MLX42/MLX42.h"
+// # include "/Users/aaoutem-/MLX42/include/MLX42/MLX42.h"
 
 typedef struct s_data
 {
