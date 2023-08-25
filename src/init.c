@@ -10,14 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3D.h"
+#include "../cub3d.h"
 
-float	player_angle(t_data *data, int i, int j)
+double	player_angle(t_data *data, int i, int j)
 {
 	if (data->map[i][j] == 'N')
-		return ((3 * M_PI) / 2);
+		return (3 * M_PI_2);
 	else if (data->map[i][j] == 'S')
-		return (M_PI / 2);
+	{
+		printf("am here\n");
+		return (M_PI_2);
+	}
 	else if (data->map[i][j] == 'W')
 		return (M_PI);
 	else

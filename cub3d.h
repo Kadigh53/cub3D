@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 04:00:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/19 08:50:50 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/08/25 14:30:15 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # include <math.h>
 # include <unistd.h>
-# include <stdlib.h>    
+# include <stdlib.h>
 # include <stdio.h>
 # include <fcntl.h>
 // # include "/Users/aaoutem-/MLX42/include/MLX42/MLX42.h"
@@ -28,11 +28,14 @@ typedef struct s_data
 	char		**map;
 	float		pposx;
 	float		pposy;
-	float		p_angle;
+	double		p_angle;
 }				t_data;
 
 /*________________________*/
 void	init(t_data *data);
-/*________________________*/
+/*__________ray casting______________*/
+void	castrays(t_data *data);
+/*____________tabaqa lkadi7a 3awd hhhhhh______________*/
+double	ft_min(double val1, double val2);
 
 # endif

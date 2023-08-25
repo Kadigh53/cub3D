@@ -12,15 +12,15 @@
 
 #include "cub3D.h"
 
-int main(int ac, char **av)
-{
-    void    *mlx;
-    void    *mlx_win;
-    t_data  data;
+// int main(int ac, char **av)
+// {
+//     void    *mlx;
+//     void    *mlx_win;
+//     t_data  data;
     
-    if (ft_parsing(ac, av[1], &data))
-        return(0);
-    mlx = mlx_init();
-    mlx_win = mlx_new_window(mlx, 2000, 1000, CUB3D);
-    mlx_loop(mlx);
-}
+//     if (ft_parsing(ac, av[1], &data))
+//         return(0);
+//     mlx = mlx_init();
+//     mlx_win = mlx_new_window(mlx, 2000, 1000, CUB3D);
+//     mlx_loop(mlx);
+// }
