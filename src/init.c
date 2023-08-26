@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 04:42:31 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/18 02:25:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/08/26 11:48:14 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,7 @@ double	player_angle(t_data *data, int i, int j)
 	if (data->map[i][j] == 'N')
 		return (3 * M_PI_2);
 	else if (data->map[i][j] == 'S')
-	{
-		printf("am here\n");
 		return (M_PI_2);
-	}
 	else if (data->map[i][j] == 'W')
 		return (M_PI);
 	else
