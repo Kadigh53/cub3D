@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 04:42:31 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/26 11:48:14 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/08/27 12:45:05 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void	player_position(t_data *data)
 void	init(t_data *data)
 {
 	player_position(data);
+	data->pp_dist = (WIDTH / 2) / tan(M_PI / 6);
 }
