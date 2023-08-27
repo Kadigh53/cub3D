@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 04:00:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/25 14:30:15 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/08/27 12:55:49 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define WIDTH 1024
 # define HEIGHT 633
+
 
 # include <math.h>
 # include <unistd.h>
@@ -29,6 +30,7 @@ typedef struct s_data
 	float		pposx;
 	float		pposy;
 	double		p_angle;
+	double		pp_dist;
 }				t_data;
 
 /*________________________*/
