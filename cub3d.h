@@ -6,14 +6,14 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 04:00:30 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/27 12:55:49 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/08/29 11:46:29 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# define WIDTH 1024
+# define WIDTH 12
 # define HEIGHT 633
 
 
