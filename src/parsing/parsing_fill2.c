@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_fill2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:12:20 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/18 22:05:36 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/30 14:03:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char *ft_get_color(char *path)
 
 void    check_name(char *map)
 {
-    int len = ft_strlen(map);
+    int len = ft_ft_strlen(map);
     
     if (map[len - 1] != 'b' || map[len - 2] != 'u' || map[len - 3] != 'c' || map[len - 4] != '.')
     {
