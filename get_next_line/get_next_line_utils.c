@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 11:23:36 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/16 11:23:38 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/30 14:03:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_ft_strlen(char *str)
 {
 	size_t	i;
 
@@ -42,7 +42,7 @@ char	*ft_strdup( char *s)
 	char	*dst;
 
 	src = (char *)s;
-	dst = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	dst = malloc(sizeof(char) * (ft_ft_strlen(src) + 1));
 	if (dst == NULL)
 		return (NULL);
 	i = 0;
@@ -64,7 +64,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		s1 = ft_strdup("");
 	if (s2)
 	{
-		src = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+		src = malloc(sizeof(char) * (ft_ft_strlen(s1) + ft_ft_strlen(s2) + 1));
 		if (!src)
 			return (NULL);
 		i = -1;
@@ -72,8 +72,8 @@ char	*ft_strjoin(char *s1, char *s2)
 			src[i] = s1[i];
 		i = -1;
 		while (s2[++i])
-			src[ft_strlen(s1) + i] = s2[i];
-		src[ft_strlen(s1) + i] = '\0';
+			src[ft_ft_strlen(s1) + i] = s2[i];
+		src[ft_ft_strlen(s1) + i] = '\0';
 		if (src[0] == '\0')
 			return (free (src), free(s1), NULL);
 		free (s1);

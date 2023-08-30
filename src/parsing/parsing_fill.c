@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_fill.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:07:16 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/18 22:05:08 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/30 14:03:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void    allocate_map(t_data *data)
             {
                 data->map_path[j] = malloc(sizeof(char) * (data->map_width + 1));
                 strcpy(data->map_path[j], data->map_array[i]);
-                if (strlen(data->map_path[j]) < data->map_width)
+                if (ft_strlen(data->map_path[j]) < data->map_width)
                     ft_fill_space(data->map_path[j], data->map_width);
                 if (data->map_array[i][0] == '\0')
                     break;
@@ -101,7 +101,7 @@ void    ft_get_width(t_data *data)
         {
             while(data->map_array[i][j])
             {
-                max = strlen(data->map_array[i]);
+                max = ft_strlen(data->map_array[i]);
                 if (max > data->map_width)
                     data->map_width = max;
                 j++;

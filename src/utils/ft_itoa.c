@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 18:38:13 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/16 18:38:28 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/30 13:59:38 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "../../cub3d.h"
 
 static int	ft_lenght(int n)
 {

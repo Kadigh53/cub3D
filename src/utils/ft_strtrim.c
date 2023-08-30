@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:24:29 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/18 12:08:16 by sbzizal          ###   ########.fr       */
+/*   Updated: 2023/08/30 14:29:57 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "../../cub3d.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+static size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 {
 	size_t	i;
 	char	*s;
@@ -20,7 +20,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	i = 0;
 	s = (char *)src;
-	k = strlen(s);
+	k = ft_strlen(s);
 	if (dstsize == 0)
 		return (k);
 	while (s[i] && i < dstsize - 1)
@@ -32,7 +32,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (k);
 }
 
-static size_t	ft_len(const char *s, size_t len)
+static size_t	ft_len(char *s, size_t len)
 {
 	size_t	i;
 
@@ -42,14 +42,14 @@ static size_t	ft_len(const char *s, size_t len)
 	return (i);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char			*sub;
 	size_t			newlen;
 
 	if (!s)
 		return (NULL);
-	if (start > strlen(s))
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
 	newlen = ft_len(s + start, len);
 	sub = malloc((newlen + 1) * sizeof(char));
@@ -59,7 +59,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	int		i;
 	int		len;

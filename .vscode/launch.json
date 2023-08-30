@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/aaoutem-/Desktop/projects/cub2/a.out",
+            "program": "/Users/aaoutem-/Desktop/projects/cub2/cub",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
