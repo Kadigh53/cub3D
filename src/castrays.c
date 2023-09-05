@@ -6,7 +6,7 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 08:09:27 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/30 14:57:51 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:21:24 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,23 @@ double	find_intersecto(t_data *data, double ray_angle)
 	// xinter = data->pposx + (64 - (data->pposy % 64));
 	// vintersectdist = sqrt(pow((xinter - data->pposx), 2) + pow((yinter - data->pposy), 2));
 
-void	project_dawall(t_data *data, double ray_angle, double ray_dist, int i)
+void	put_wall(t_data *data, int wp_height, int i)
+{
+	int	j;
+	int	w;
+
+	j = 0;
+	w = (int)(HEIGHT / 2) - (int)(wp_height / 2);
+	if (w < 0)
+		w = 0;
+	while (j <(wp_height))
+	{
+		mlx_put_pixel(data->img, i, w + j, 0x00FF00FF);
+		j++;
+	}
+}
+
+void	project_dawall(t_data *data, double ray_dist, int i)
 {
 	double	ray_disty;
 	double	wp_height;
@@ -122,13 +138,9 @@ void	project_dawall(t_data *data, double ray_angle, double ray_dist, int i)
 	ray_step = (M_PI / 3) / WIDTH;
 	destortion_angle = (M_PI / 6) - (i * ray_step);
 	ray_disty = ray_dist * fabs(cos(destortion_angle));
-	// printf("ppdst: %lf \t%lf \t%lf\n",(data->pp_dist ), ray_disty, (data->pp_dist / ray_disty)*64);
 	wp_height = (data->pp_dist / ray_disty) * 64;
-	// printf("%lf\n",wp_height);
-	// go to window and draw the first half and the other half 
-	// render();
-	// printf("ray_dist : %lf \tdestortion : %lf \tyrproject : %lf\n",ray_dist, destortion_angle*180/M_PI, ray_disty);
-	(void)ray_angle;
+	printf("%f\n", wp_height);
+	put_wall(data, wp_height, i);
 }
 
 void	castrays(t_data *data)
@@ -146,16 +158,16 @@ void	castrays(t_data *data)
 	rayenn = ray_angle*180/M_PI;
 	// ray_dist = find_intersecto(data, ray_angle);
 	// return;
-	while(i <= WIDTH)
+	while(i < WIDTH)
 	{
 		ray_dist = find_intersecto(data, ray_angle);
-		// printf("%f\t", ray_angle*180/M_PI);
+		printf("%f\t", ray_angle*180/M_PI);
 		// printf("%lf\n", ray_dist);
 		if (ray_dist == floor(-1))
 			break;
 			// 	continue;
 		// }
-		project_dawall(data, ray_angle, ray_dist, i);
+		project_dawall(data, ray_dist, i);
 		ray_angle += ray_step;
 		rayenn = ray_angle*180/M_PI;
 		i++;
