@@ -6,11 +6,11 @@
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:23:40 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/30 13:59:35 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/09/22 06:53:55 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../cub3d.h"
+#include "../../cub3D.h"
 
 static int	ft_count_words(char *str, char separator)
 {

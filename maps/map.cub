@@ -1,13 +1,16 @@
-NO ./texture/north.xpm
-SO ./texture/south.xpm
-WE ./texture/west.xpm
-EA ./texture/east.xpm
-F 250,100,0
-C 225,30,0
+NO  ./texture/bricks1.png
+SO ./texture/neon1.png
+WE ./texture/bricks3.png
+EA ./texture/neon.png
+
+F 110,210,10
+C 25,25,25
 
 
-111111111     111111111
-100W00001    100000001
-100000001     1100111111
-1000000001111   11111111
-11111111111111111111
+
+11111111111
+10000000001
+10010100001
+10000000001
+1000N000001
+11111111111

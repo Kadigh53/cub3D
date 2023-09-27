@@ -3,128 +3,127 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 19:54:28 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/30 12:13:38 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:27:53 by sbzizal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../cub3d.h"
+#include "../../cub3D.h"
 
-void    parse_player(t_data *data)
+void	parse_player(t_data *data)
 {
-    int x = 0;
-    int y = 0;
-    int count = 0;
-    
-    while(data->map_path[x])
-    {
-        y = 0;
-        while(data->map_path[x][y])
-        {
-            if (data->map_path[x][y] == 'N' || data->map_path[x][y] == 'S' || data->map_path[x][y] == 'W' || data->map_path[x][y] == 'E')
-            {
-                count++;
-                data->x_pos = x;
-                data->y_pos = y;
-                data->player = data->map_path[x][y];
-                printf("player: %c\n", data->player);
-            }
-            y++;
-        }
-        x++;
-    }
-    if (count != 1)
-    {
-        printf("player_not_valid\n");
-        exit(1);
-    }
+	int	count;
+	int	y;
+	int	x;
+
+	y = 0;
+	count = 0;
+	while (data->map_path[y])
+	{
+		x = 0;
+		while (data->map_path[y][x])
+		{
+			if (data->map_path[y][x] == 'N' || data->map_path[y][x] == 'S' 
+			|| data->map_path[y][x] == 'W' || data->map_path[y][x] == 'E')
+			{
+				count++;
+				data->x_pos = x;
+				data->y_pos = y;
+				data->player = data->map_path[y][x];
+			}
+			x++;
+		}
+		y++;
+	}
+	if (count != 1)
+		ft_error("player_not_valid");
 }
 
-void    final_pars_map(char **map)
+void	final_pars_map(char **map)
 {
-    int x = 0;
-    int y = 0;
+	int	y;
+	int	x;
 
-    while(map[x])
-    {
-        y = 0;
-        while(map[x][y])
-        {
-            if (map[x][y] != '1' && map[x][y] != '0'&& map[x][y] != 'N' && map[x][y] != 'S' 
-                && map[x][y] != 'W' && map[x][y] != 'E' && map[x][y] != '5')
-            {
-                printf("Error\n");
-                exit(1);
-            }
-            if (map[x][y] == '0')
-            {
-                if (map[x][y + 1] == '5' || map[x][y - 1] == '5' || map[x + 1][y] == '5' || map[x - 1][y] == '5')
-                {
-                    printf("Error\n");
-                    exit(1);
-                }
-            }
-            y++;
-        }
-        x++;
-    }
+	x = 0;
+	y = 0;
+	while (map[x])
+	{
+		y = 0;
+		while (map[x][y])
+		{
+			if (map[x][y] != '1' && map[x][y] != '0' && map[x][y] != 'N'
+			&& map[x][y] != 'S' && map[x][y] != 'W' && map[x][y] != 'E'
+			&& map[x][y] != '5')
+				ft_error("map_not_valid");
+			if (map[x][y] == '0' || map[x][y] == 'N' || map[x][y] == 'S' 
+			|| map[x][y] == 'W' || map[x][y] == 'E')
+			{
+				if (map[x][y + 1] == '5' || map[x][y - 1] == '5' 
+				|| map[x + 1][y] == '5' || map[x - 1][y] == '5')
+					ft_error("map_not_valid");
+			}
+			y++;
+		}
+		x++;
+	}
 }
 
-void    ft_inisialize(t_data *data)
+void	ft_inisialize(t_data *data)
 {
-    data->map_array = NULL;
-    data->map_path = NULL;
-    data->n_path = NULL;
-    data->s_path = NULL;
-    data->w_path = NULL;
-    data->e_path = NULL;
-    data->f_path = NULL;
-    data->c_path = NULL;
-    data->map_height = 0;
-    data->map_width = 0;
-    data->x_pos = 0;
-    data->y_pos = 0;
-    data->player = 0;
+	data->map_array = NULL;
+	data->map_path = NULL;
+	data->n_path = NULL;
+	data->s_path = NULL;
+	data->w_path = NULL;
+	data->e_path = NULL;
+	data->f_color = 0;
+	data->c_color = 0;
+	data->map_height = 0;
+	data->map_width = 0;
+	data->x_pos = 0;
+	data->y_pos = 0;
+	data->player = 0;
 }
 
-int    ft_parsing(int ac, char *map, t_data *data)
+void	ft_parsing_part(char *map, t_data *data)
 {
-    char    *line;
-    int     fd;
+	char	*line;
+	int		fd;
 
-    if (ac != 2)
-    {
-        printf("Error\n");
-        exit(1);
-    }
-    
-    ft_inisialize(data);
-    check_name(map);
-    fd =  open(map, O_RDWR, 0777);
-    if (fd < 0)
-        printf("file_not_found\n");
-    line = get_next_line(fd);
-    while(line)
-    {
-        data->map_height++;
-        free(line);
-        line = get_next_line(fd);
-    }
-    free(line);
-    close(fd);
-    
-    ft_fill_array(data, map);
-    ft_get_width(data);
-    // print_array(data);
-    get_path(data);
-    if (check_path(data))
-        exit(1);
-    allocate_map(data);
-    check_map(data);
-    print_map(data);
-    parse_player(data);
-    final_pars_map(data->map_path);
-    return (0);
+	ft_inisialize(data);
+	fd = open(map, O_RDWR, 0777);
+	check_name(map);
+	if (fd < 0)
+		ft_error("file_not_found");
+	line = get_next_line(fd);
+	while (line)
+	{
+		data->map_height++;
+		free(line);
+		line = get_next_line(fd);
+	}
+	free(line);
+	close(fd);
+}
+
+int	ft_parsing(int ac, char *map, t_data *data)
+{
+	if (ac != 2)
+		ft_error("Error : invalid number of arguments");
+	if (HEIGHT <= 0 || WIDTH <= 0)
+		ft_error("Error : invalid resolution");
+	ft_parsing_part(map, data);
+	ft_fill_array(data, map);
+	ft_get_width(data);
+	get_path(data);
+	if (check_path(data))
+		return (1);
+	allocate_map(data);
+	check_map(data);
+	parse_player(data);
+	final_pars_map(data->map_path);
+	ft_get_height(data);
+	return (0);
 }

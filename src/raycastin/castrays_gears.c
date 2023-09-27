@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   castrays_gears.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 22:00:23 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/09/26 05:00:08 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/09/22 01:20:37 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/09/22 07:35:07 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3D.h"
 
-size_t	ft_strlen(char const *s)
+float	percise_ycrdnt(double ray_angle)
 {
-	size_t	i;
+	if (sin(ray_angle) > 0)
+		return (64.0);
+	return (0.0);
+}
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+float	percise_xcrdnt(double ray_angle)
+{
+	if (cos(ray_angle) > 0)
+		return (64.0);
+	return (0.0);
+}
+
+int	xray_direction(double ray_angle)
+{
+	return (fabs(cos(ray_angle)) / cos(ray_angle));
+}
+
+int	yray_direction(double ray_angle)
+{
+	return (fabs(sin(ray_angle)) / sin(ray_angle));
 }

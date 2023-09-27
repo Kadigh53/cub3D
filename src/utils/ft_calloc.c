@@ -1,60 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 18:38:13 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/09/22 06:53:38 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/09/20 13:25:48 by sbzizal           #+#    #+#             */
+/*   Updated: 2023/09/22 06:47:19 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../cub3D.h"
 
-static int	ft_lenght(int n)
+void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 
 	i = 0;
-	if (n <= 0)
-		i = 1;
-	while (n != 0)
+	while (i < len)
 	{
-		n = n / 10;
+		((unsigned char *)b)[i] = (unsigned char)c;
 		i++;
 	}
-	return (i);
+	return (b);
 }
 
-static char	*ft_str_itoa(char *str, int n, int len)
+void	ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
-	{
-		str[len] = 48 + (n % 10);
-		len--;
-		n = n / 10;
-	}
-	return (str);
+	ft_memset(s, 0, n);
 }
 
-char	*ft_itoa(int n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char	*str;
-	size_t	len;
+	void	*p;
 
-	len = ft_lenght(n);
-	str = malloc(sizeof(char) * len +1);
-	if (!str)
+	p = malloc(count * size);
+	if (!p)
 		return (NULL);
-	if (n == 0)
-		str[0] = '0';
-	if (n < 0)
+	else
 	{
-		n = -n;
-		str[0] = '-';
+		ft_bzero(p, count * size);
+		return (p);
 	}
-	str[len] = '\0';
-	str = ft_str_itoa(str, n, len - 1);
-	return (str);
 }

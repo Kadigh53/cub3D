@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   mini_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 21:23:34 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/08/30 14:06:41 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/09/23 01:35:44 by sbzizal           #+#    #+#             */
+/*   Updated: 2023/09/25 10:32:35 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../cub3d.h"
+#include "../../cub3D.h"
 
-char	*ft_strchr(char *s, int c)
+void	render_map(t_data *data)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (s[i] != (char)c)
-	{
-		if (!s[i])
-			return (NULL);
-		i++;
-	}
-	return ((char *)s + i);
+	castrays(data);
+	mini_map(data);
+	mini_player(data);
+	mouse_move(data);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sbzizal <sbzizal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:24:29 by sbzizal           #+#    #+#             */
-/*   Updated: 2023/08/30 14:29:57 by aaoutem-         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:12:59 by sbzizal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../cub3d.h"
+#include "../../cub3D.h"
 
-static size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	char	*s;
@@ -32,7 +32,7 @@ static size_t	ft_strlcpy(char *dst, char *src, size_t dstsize)
 	return (k);
 }
 
-static size_t	ft_len(char *s, size_t len)
+static size_t	ft_len(const char *s, size_t len)
 {
 	size_t	i;
 
@@ -42,7 +42,7 @@ static size_t	ft_len(char *s, size_t len)
 	return (i);
 }
 
-static char	*ft_substr(char *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*sub;
 	size_t			newlen;
@@ -59,7 +59,7 @@ static char	*ft_substr(char *s, unsigned int start, size_t len)
 	return (sub);
 }
 
-char	*ft_strtrim(char *s1, char *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		len;
@@ -74,9 +74,9 @@ char	*ft_strtrim(char *s1, char *set)
 	{
 		len = ft_strlen(ss1);
 		while (ss1[i] && ft_strchr(sset, ss1[i]))
-				i++;
+			i++;
 		while (len > i && ft_strchr(sset, ss1[len - 1]))
-				len--;
+			len--;
 		res = ft_substr(ss1, i, len - i);
 		return (res);
 	}

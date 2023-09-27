@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   void.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaoutem- <aaoutem-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 22:00:23 by aaoutem-          #+#    #+#             */
-/*   Updated: 2023/09/26 05:00:08 by aaoutem-         ###   ########.fr       */
+/*   Created: 2023/09/25 06:51:19 by aaoutem-          #+#    #+#             */
+/*   Updated: 2023/09/25 10:50:11 by aaoutem-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../cub3D.h"
+#include "cub3D.h"
 
-size_t	ft_strlen(char const *s)
+void	mini_map(t_data *data)
 {
-	size_t	i;
+	(void)data;
+	return ;
+}
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+void	mini_player(t_data *data)
+{
+	(void)data;
+	return ;
+}
+
+void	mouse_move(t_data *data)
+{
+	(void)data;
+	return ;
 }

@@ -1,3 +1,0 @@
-OpenGL
-frameworks used 'cocoa, glfw, IOKit'
--ldl
